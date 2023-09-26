@@ -1,0 +1,26 @@
+minimum_cumulusci_version: '3.79.0'
+project:
+    name: TL_ApexEmail
+    package:
+        name: TL_Email
+        api_version: '55.0'
+    git:
+    test:
+        name_match: '_Test'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/TL_ApexEmail/tests
+            options:
+                outputdir: robot/TL_ApexEmail/results
+
+    robot_testdoc:
+        options:
+            path: robot/TL_ApexEmail/tests
+            output: robot/TL_ApexEmail/doc/TL_ApexEmail_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
